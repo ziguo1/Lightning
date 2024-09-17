@@ -24,15 +24,15 @@ void walk(int startX, int startY, int endX) {
 }
 
 boolean toggled = false;
-long flashDebounce = System.currentTimeMillis();
+long flashDebounce = Date.now();
 boolean flashIsOn = false;
 
 void draw()
 {  
   if (toggled) {
     walk(120, 256, 512);
-    if (System.currentTimeMillis() - flashDebounce >= 100) {
-      flashDebounce = System.currentTimeMillis();
+    if (Date.now() - flashDebounce >= 100) {
+      flashDebounce = Date.now();
       if (flashIsOn) background(color(64, 64, 64));
       else background(color(255, 255, 255));
       flashIsOn = !flashIsOn;
@@ -47,7 +47,7 @@ void drawWand() {
    rect(0, 240, 100, 40);
   
   fill(color(27, 27, 27));
-  circle(110, 256, 100);
+  ellipse(110, 256, 100, 100);
 }
 
 void mouseClicked() {
