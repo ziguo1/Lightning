@@ -5,7 +5,6 @@ void setup()
 }
 
 void walk(int startX, int startY, int endX) {
-  push();
   stroke(color(16, 251, 219));
   int diff = endX - startX;
   float inc = diff * 0.02;
@@ -17,10 +16,8 @@ void walk(int startX, int startY, int endX) {
     line(pointX, pointY, incX, incY);
     pointX = incX;
     pointY = incY;
-    
   }
-  
-  pop();
+  stroke(color(0, 0, 0));
 }
 
 boolean toggled = false;
